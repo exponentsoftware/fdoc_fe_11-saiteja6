@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import { useState } from 'react'
 import './App.css';
+import Album from './components/Album';
 
 function App() {
+  const [artist, setArtist] = useState('A.R. Rahman')
+  const [album, setAlbum] = useState('Rockstar')
+  const [albumCover, setAlbumCover] = useState('https://upload.wikimedia.org/wikipedia/en/2/2b/Rockstar_%28soundtrack%29.jpg')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Album artist={artist} album={album} albumCover={albumCover}/>
     </div>
   );
 }
